@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus ring customization */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary-500));
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+}
+
+/* Glassmorphism effect */
+.glass {
+  @media (prefers-reduced-motion: no-preference) {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Animation utilities */
+.hover-lift {
+  @transition-transform duration-300;
+}
+
+.hover-lift:hover {
+  @transform -translate-y-2;
+}
+
+.hover-scale {
+  @transition-transform duration-300;
+}
+
+.hover-scale:hover {
+  @transform scale(1.05);
+}
